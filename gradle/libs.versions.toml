@@ -21,7 +21,7 @@ grpc-okhttp = { group = "io.grpc", name = "grpc-okhttp", version = "1.60.0" }
 grpc-testing = { group = "io.grpc", name = "grpc-testing", version = "1.60.0" }
 grpc-stub = { group = "io.grpc", name = "grpc-stub", version = "1.60.0" }
 grpc-kotlin-stub = { group = "io.grpc", name = "grpc-kotlin-stub", version = "1.4.1" }
-apexnova-proto = { group = "com.apexnova", name = "proto", version = "+" }
+apexnova-proto = { group = "com.apexnova", name = "proto", version = "latest.release" }
 
 protoc = { group = "com.google.protobuf", name = "protoc", version = "3.25.1" }
 protobuf-kotlin = { group = "com.google.protobuf", name = "protobuf-kotlin", version = "3.25.1" }
