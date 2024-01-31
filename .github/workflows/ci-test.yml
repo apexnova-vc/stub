@@ -1,5 +1,5 @@
 # .github/workflows/test.yml
-name: Run Unit Tests
+name: Tests
 
 on: [push, pull_request]
 
