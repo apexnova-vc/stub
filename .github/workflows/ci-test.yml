@@ -6,6 +6,9 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_USERNAME: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
     - uses: actions/checkout@v2
