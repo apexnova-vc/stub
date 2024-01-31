@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.apexnova"
-version = "0.0.3"
+version = findProperty("version")
 
 dependencies {
     protobuf(libs.apexnova.proto)

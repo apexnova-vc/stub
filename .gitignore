@@ -75,4 +75,3 @@ out/
 # Other files and directories
 *.iml
 /local.properties
-gradle.properties
