@@ -17,7 +17,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/apexnova-vc/proto")
             credentials {
                 username = "dongming-shen" //gradle.startParameter.projectProperties["gpr.user"] as String? ?: System.getenv("GITHUB_USERNAME")
-                password = gradle.startParameter.projectProperties["gpr.key"] as String? ?: System.getenv("GITHUB_TOKEN")
+                password = "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" //gradle.startParameter.projectProperties["gpr.key"] as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }

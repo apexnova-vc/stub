@@ -66,7 +66,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/apexnova-vc/stub")
             credentials {
                 username = "dongming-shen" // findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
-                password = "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" // findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+                password = findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
