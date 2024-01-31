@@ -1,3 +1,16 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+// Initialize Properties object
+val localProperties = Properties()
+
+// Define the local properties file
+val localPropertiesFile = rootDir.resolve("local.properties")
+
+if (localPropertiesFile.exists()) {
+    FileInputStream(localPropertiesFile).use { localProperties.load(it) }
+}
+
 rootProject.name = "stub"
 
 pluginManagement {
@@ -8,7 +21,6 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    @Suppress("UnstableApiUsage")
     repositories {
         mavenCentral()
         google()
@@ -16,12 +28,14 @@ dependencyResolutionManagement {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/apexnova-vc/proto")
             credentials {
-                username = gradle.startParameter.projectProperties["gpr.user"] as String? ?: System.getenv("GITHUB_USERNAME")
-                password = gradle.startParameter.projectProperties["gpr.key"] as String? ?: System.getenv("GITHUB_TOKEN")
+                username = localProperties.getProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME") ?: ""
+                password = localProperties.getProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN") ?: ""
             }
         }
     }
 }
+
+
 
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
