@@ -1,5 +1,9 @@
 rootProject.name = "stub"
 
+val githubUsername: String? = System.getenv("GITHUB_USERNAME")
+val githubToken: String? = System.getenv("GITHUB_TOKEN")
+
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -16,8 +20,8 @@ dependencyResolutionManagement {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/apexnova-vc/proto")
             credentials {
-                username = "dongming-shen" //gradle.startParameter.projectProperties["gpr.user"] as String? ?: System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_TOKEN")
+                username = githubUsername
+                password = githubToken
             }
         }
     }
