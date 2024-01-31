@@ -2,15 +2,13 @@
 name: Publish Package
 
 on:
-  workflow_run:
-    workflows: ["Build", "Tests"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.ref == 'refs/heads/main' }}
     env:
       GITHUB_USERNAME: ${{ github.actor }}
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
