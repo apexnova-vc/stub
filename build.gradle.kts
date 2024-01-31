@@ -1,11 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.android.library) apply false
     alias(libs.plugins.protobuf) apply true
     alias(libs.plugins.kotlin.jvm) apply true
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.ktlint) apply false
-    alias(libs.plugins.dokka) apply false
     `java-library`
     `maven-publish`
 }
@@ -16,10 +11,8 @@ version = findProperty("version")
 dependencies {
     protobuf(libs.apexnova.proto)
 
-    api(libs.kotlinx.coroutines.core)
     api(libs.grpc.stub)
     api(libs.grpc.protobuf)
-    api(libs.protobuf.java.util)
     api(libs.protobuf.kotlin)
     api(libs.grpc.kotlin.stub)
 }
@@ -79,6 +72,6 @@ publishing {
 }
 
 java {
-    // withJavadocJar() add this will cause warnings fix later
+    // withJavadocJar() //  add this will cause warnings fix later
     withSourcesJar()
 }
