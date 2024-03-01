@@ -1,44 +1,87 @@
+[versions]
+spring-boot = "3.2.3"
+spring-dependency-management = "1.1.4"
+reactor-core = "3.6.3"
+kotlin = "1.9.21"
+android = "8.3.0"
+protobuf = "0.9.4" 
+ktlint = "12.0.3"
+jib = "3.4.1"
+grpc = "1.60.0"
+grpc-kotlin = "1.4.1"
+graphql = "21.3"
+palantir-graal = "0.12.0"
+androidx-compose = "1.5.4"
+dgs-codegen = "6.1.5"
+java-jwt = "4.4.0"
+dgs-extended-scalars = "8.4.0" # replace with your desired version
+protobuf-lib = "3.25.1"
+
+apexnova-proto = "+"
+
+
 [plugins]
-android-application = { id = "com.android.application", version = "8.2.0" }
-android-library = { id = "com.android.library", version = "8.2.0" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.9.21" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.21" }
-protobuf = { id = "com.google.protobuf", version = "0.9.4" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "12.0.3" }
-palantir-graal = { id = "com.palantir.graal", version = "0.12.0" }
-jib = { id = "com.google.cloud.tools.jib", version = "3.4.0" }
-spring-boot = { id = "org.springframework.boot", version = "3.2.1" }
-spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.4" }
-kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version = "1.9.21" }
-dokka = { id = "org.jetbrains.dokka", version = "1.4.32" }
+android-application = { id = "com.android.application", version.ref = "android" }
+android-library = { id = "com.android.library", version.ref = "android" }
+
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+
+# other
+dgs-codegen = { id = "com.netflix.dgs.codegen", version.ref = "dgs-codegen" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+palantir-graal = { id = "com.palantir.graal", version.ref = "palantir-graal" }
+jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 
 [libraries]
-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.7.3" }
-grpc-protobuf = { group = "io.grpc", name = "grpc-protobuf", version = "1.60.0" }
-grpc-protobuf-lite = { group = "io.grpc", name = "grpc-protobuf-lite", version = "1.60.0" }
-grpc-netty = { group = "io.grpc", name = "grpc-netty", version = "1.60.0" }
-grpc-okhttp = { group = "io.grpc", name = "grpc-okhttp", version = "1.60.0" }
-grpc-testing = { group = "io.grpc", name = "grpc-testing", version = "1.60.0" }
-grpc-stub = { group = "io.grpc", name = "grpc-stub", version = "1.60.0" }
-grpc-kotlin-stub = { group = "io.grpc", name = "grpc-kotlin-stub", version = "1.4.1" }
-apexnova-proto = { group = "com.apexnova", name = "proto", version = "+" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin" }
+kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
 
-protoc = { group = "com.google.protobuf", name = "protoc", version = "3.25.1" }
-protobuf-kotlin = { group = "com.google.protobuf", name = "protobuf-kotlin", version = "3.25.1" }
-protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version = "3.25.1" }
-protobuf-java-util = { group = "com.google.protobuf", name = "protobuf-java-util", version = "3.25.1" }
-protoc-gen-grpc-java = { group = "io.grpc", name = "protoc-gen-grpc-java", version = "1.60.0" }
-protoc-gen-grpc-kotlin = { group = "io.grpc", name = "protoc-gen-grpc-kotlin", version = "1.4.1" }
+# grpc
+grpc-protobuf = { group = "io.grpc", name = "grpc-protobuf", version.ref = "grpc" }
+grpc-protobuf-lite = { group = "io.grpc", name = "grpc-protobuf-lite", version.ref = "grpc" }
+grpc-netty = { group = "io.grpc", name = "grpc-netty", version.ref = "grpc" }
+grpc-okhttp = { group = "io.grpc", name = "grpc-okhttp", version.ref = "grpc" }
+grpc-testing = { group = "io.grpc", name = "grpc-testing", version.ref = "grpc" }
+grpc-stub = { group = "io.grpc", name = "grpc-stub", version.ref = "grpc" }
+
+# grpc-kotlin
+grpc-kotlin-stub = { group = "io.grpc", name = "grpc-kotlin-stub", version.ref = "grpc-kotlin" }
+protoc-gen-grpc-kotlin = { group = "io.grpc", name = "protoc-gen-grpc-kotlin", version.ref = "grpc-kotlin" }
+
+# apexnova
+apexnova-proto = { group = "com.apexnova", name = "proto", version.ref = "apexnova-proto" }
+apexnova-stub = { group = "com.apexnova", name = "stub", version.ref = "apexnova-proto" }
+
+# protobuf
+protoc = { group = "com.google.protobuf", name = "protoc", version.ref = "protobuf-lib" }
+protobuf-kotlin = { group = "com.google.protobuf", name = "protobuf-kotlin", version.ref = "protobuf-lib" }
+protobuf-kotlin-lite = { group = "com.google.protobuf", name = "protobuf-kotlin-lite", version.ref= "protobuf-lib" }
+protobuf-java-util = { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobuf-lib" }
+protoc-gen-grpc-java = { group = "io.grpc", name = "protoc-gen-grpc-java", version.ref = "grpc" }
 
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version = "1.8.2" }
-androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version = "1.5.4" }
-androidx-compose-material = { group = "androidx.compose.material", name = "material", version = "1.5.4" }
-androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version = "1.5.4" }
-androidx-compose-ui = { group = "androidx.compose.ui", name = "ui", version = "1.5.4" }
-androidx-compose-compiler = { group = "androidx.compose.compiler", name = "compiler", version = "1.5.6" }
 
-kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version = "1.9.21" }
+# androidx-compose
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "androidx-compose" }
+androidx-compose-material = { group = "androidx.compose.material", name = "material", version.ref = "androidx-compose" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "androidx-compose" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "androidx-compose" }
+androidx-compose-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "androidx-compose" }
 
-spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version = "3.2.1" }
-spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version = "3.2.1" }
-spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version = "3.2.1" }
+# spring
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring-boot" }
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring-boot" }
+spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+spring-boot-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring-boot" }
+spring-boot-validation = { group = "org.springframework.boot", name = "spring-boot-starter-validation", version.ref = "spring-boot" }
+
+# other
+reactor-test = { group = "io.projectreactor", name = "reactor-test", version.ref = "reactor-core" }
+java-jwt = { group = "com.auth0", name = "java-jwt", version.ref = "java-jwt" }
+graphql-dgs-extended-scalars = { group = "com.netflix.graphql.dgs", name = "graphql-dgs-extended-scalars", version.ref = "dgs-extended-scalars" }
