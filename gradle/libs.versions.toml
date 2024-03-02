@@ -3,6 +3,7 @@ spring-boot = "3.2.3"
 spring-dependency-management = "1.1.4"
 reactor-core = "3.6.3"
 kotlin = "1.9.21"
+kotlin-coroutines = "1.5.2"
 android = "8.3.0"
 protobuf = "0.9.4" 
 ktlint = "12.0.3"
@@ -39,7 +40,7 @@ palantir-graal = { id = "com.palantir.graal", version.ref = "palantir-graal" }
 jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
 
 [libraries]
-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
 
 # grpc

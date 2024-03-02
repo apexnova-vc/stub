@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_USERNAME: ${{ github.actor }}
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up JDK 21
       uses: actions/setup-java@v4
@@ -23,8 +25,7 @@ jobs:
         distribution: 'adopt'
 
     - name: Set version
-      run:
-          printf "\nversion=${GITHUB_SHA::7}" >> gradle.properties
+      run: printf "\nversion=0.0.$(git rev-list --count HEAD)" >> gradle.properties
 
     - name: Publish package
       run: ./gradlew publish

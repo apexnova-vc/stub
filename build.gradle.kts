@@ -11,10 +11,11 @@ version = findProperty("version")
 dependencies {
     protobuf(libs.apexnova.proto)
 
-    api(libs.grpc.stub)
-    api(libs.grpc.protobuf)
-    api(libs.protobuf.kotlin)
-    api(libs.grpc.kotlin.stub)
+    implementation(libs.grpc.stub)
+    implementation(libs.grpc.protobuf)
+    implementation(libs.protobuf.kotlin)
+    implementation(libs.grpc.kotlin.stub)
+    implementation(libs.kotlinx.coroutines.core)
 }
 
 kotlin {
