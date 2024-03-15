@@ -1,3 +1,5 @@
+package com.apexnova.common.model
+
 import java.time.Instant
 import java.util.UUID
 import org.springframework.data.cassandra.core.mapping.PrimaryKey
