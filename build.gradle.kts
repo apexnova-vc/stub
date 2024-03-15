@@ -11,6 +11,7 @@ version = findProperty("version")
 dependencies {
     protobuf(libs.apexnova.proto)
 
+    implementation("org.springframework.boot:spring-boot-starter-data-cassandra:3.2.3")
     implementation(libs.grpc.stub)
     implementation(libs.grpc.protobuf)
     implementation(libs.protobuf.kotlin)
