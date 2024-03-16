@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.protobuf) apply true
-    alias(libs.plugins.kotlin.jvm) apply true
+    alias(libs.plugins.protobuf)
+    alias(libs.plugins.kotlin.jvm)
     `java-library`
     `maven-publish`
 }
@@ -17,6 +17,7 @@ dependencies {
     implementation(libs.protobuf.kotlin)
     implementation(libs.grpc.kotlin.stub)
     implementation(libs.kotlinx.coroutines.core)
+    implementation(kotlin("stdlib"))
 }
 
 kotlin {
