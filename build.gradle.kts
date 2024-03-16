@@ -74,6 +74,8 @@ publishing {
 }
 
 java {
-    // withJavadocJar() //  add this will cause warnings fix later
+    withJavadocJar() //  add this will cause warnings fix later
     withSourcesJar()
 }
+
+
