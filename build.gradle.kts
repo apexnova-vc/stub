@@ -73,10 +73,21 @@ publishing {
     }
 }
 
+sourceSets {
+    main {
+        kotlin.srcDir("src/main/kotlin")
+        resources.srcDir("src/main/resources")
+    }
+    test {
+        kotlin.srcDir("src/test/kotlin")
+        resources.srcDir("src/test/resources")
+    }
+}
+
 java {
-    sourceSets.getByName("main").resources.srcDir("src/main/kotlin")
-    withJavadocJar() //  add this will cause warnings fix later
-    // withSourcesJar()
+    withJavadocJar()
+    // Uncomment the following line if you need the sources jar as well
+    withSourcesJar()
 }
 
 
