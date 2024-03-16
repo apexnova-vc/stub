@@ -1,4 +1,4 @@
-package com.apexnova.service.model
+package com.apexnova.model
 
 import java.time.Instant
 import java.util.UUID
