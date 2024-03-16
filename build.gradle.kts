@@ -74,8 +74,9 @@ publishing {
 }
 
 java {
+    sourceSets.getByName("main").resources.srcDir("src/main/kotlin")
     withJavadocJar() //  add this will cause warnings fix later
-    withSourcesJar()
+    // withSourcesJar()
 }
 
 
